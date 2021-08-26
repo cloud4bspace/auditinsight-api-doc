@@ -1,0 +1,2572 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Deployed APIs",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:20780/auditinsight-rs"
+  }, {
+    "url" : "https://localhost:20783/auditinsight-rs"
+  }, {
+    "url" : "localhost:20783/auditinsight-rs"
+  } ],
+  "paths" : {
+    "/api/config/{id}" : {
+      "get" : {
+        "operationId" : "getUserById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/config" : {
+      "get" : {
+        "operationId" : "getConfig",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/hinweise" : {
+      "get" : {
+        "operationId" : "getAll",
+        "parameters" : [ {
+          "name" : "status",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "put" : {
+        "operationId" : "update",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/HinweisDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/HinweisDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/hinweise/count" : {
+      "get" : {
+        "operationId" : "count",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/hinweise/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "delete" : {
+        "operationId" : "deleteById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/einheiten" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/EinheitPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/einheiten/count" : {
+      "get" : {
+        "operationId" : "count",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/einheiten/{id}/prozesse" : {
+      "get" : {
+        "operationId" : "getProzesse",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/einheiten/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/personen" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "put" : {
+        "operationId" : "update",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/PersonDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/PersonDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/personen/count" : {
+      "get" : {
+        "operationId" : "count",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/personen/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "delete" : {
+        "operationId" : "deleteById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/bilanzpositionen/minyear" : {
+      "get" : {
+        "operationId" : "getMinYear",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/bilanzpositionen" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/BilanzPositionPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/bilanzpositionen/count" : {
+      "get" : {
+        "operationId" : "count",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/bilanzpositionen/jahre/{jahr}" : {
+      "get" : {
+        "operationId" : "getAllByYear",
+        "parameters" : [ {
+          "name" : "jahr",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/bilanzpositionen/maxyear" : {
+      "get" : {
+        "operationId" : "getMaxYear",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/bilanzpositionen/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/bilanzpositionen/bilanz" : {
+      "get" : {
+        "operationId" : "getAllByBukrYear",
+        "parameters" : [ {
+          "name" : "buchungskreis",
+          "in" : "query",
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "jahr",
+          "in" : "query",
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/erfolgsrepositionen/minyear" : {
+      "get" : {
+        "operationId" : "getMinYear",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/erfolgsrepositionen" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ErfolgsRePositionPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/erfolgsrepositionen/jahre/{jahr}" : {
+      "get" : {
+        "operationId" : "getAllByYear",
+        "parameters" : [ {
+          "name" : "jahr",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/erfolgsrepositionen/maxyear" : {
+      "get" : {
+        "operationId" : "getMaxYear",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/erfolgsrepositionen/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/erfolgsrepositionen/erfolgsrechnung" : {
+      "get" : {
+        "operationId" : "getAllByBukrYear",
+        "parameters" : [ {
+          "name" : "buchungskreis",
+          "in" : "query",
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "jahr",
+          "in" : "query",
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/konten" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/KontoBasicDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/konten/count" : {
+      "get" : {
+        "operationId" : "count",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/konten/teilejr/{teiljr}/ebenen/{ebene}" : {
+      "get" : {
+        "operationId" : "getAllByYear",
+        "parameters" : [ {
+          "name" : "teiljr",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "ebene",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/konten/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/anwendungen" : {
+      "get" : {
+        "operationId" : "get",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "integer",
+                "format" : "int64"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ApplikationInEinheitPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/applikationen" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ApplikationPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/applikationen/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/eigenapps" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "put" : {
+        "operationId" : "update",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/EigenAppDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/EigenAppDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/eigenapps/count" : {
+      "get" : {
+        "operationId" : "count",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/eigenapps/einheiten/{einheitId}" : {
+      "get" : {
+        "operationId" : "getAllByEinheitId",
+        "parameters" : [ {
+          "name" : "einheitId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/eigenapps/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "delete" : {
+        "operationId" : "deleteById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/prozesse" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "put" : {
+        "operationId" : "update",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProzessDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProzessDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/prozesse/count" : {
+      "get" : {
+        "operationId" : "count",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/prozesse/einheiten/{einheitId}" : {
+      "get" : {
+        "operationId" : "getAllByEinheitId",
+        "parameters" : [ {
+          "name" : "einheitId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/prozesse/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "delete" : {
+        "operationId" : "deleteById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infofelder" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InfoFeldPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infofelder/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infogruppen" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InfoGruppePostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infogruppen/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infothemen" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InfoThemaPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infothemen/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infowerte" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "put" : {
+        "operationId" : "update",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InfoWertDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InfoWertDetailDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infowerte/count" : {
+      "get" : {
+        "operationId" : "count",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infowerte/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/infowerte/wert" : {
+      "get" : {
+        "operationId" : "getWertByEinheitAndFeld",
+        "parameters" : [ {
+          "name" : "einheit",
+          "in" : "query",
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "feld",
+          "in" : "query",
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/kataloge" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/KatalogPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/kataloge/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/referenzen" : {
+      "get" : {
+        "operationId" : "getAll",
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ReferenzPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/referenzen/{id}" : {
+      "get" : {
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      },
+      "put" : {
+        "operationId" : "change",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ReferenzPostDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "default response"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "InfoThemaDto" : {
+        "type" : "object",
+        "properties" : {
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "hinweis" : {
+            "type" : "string"
+          },
+          "sortierung" : {
+            "type" : "integer"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "referenzen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ReferenzDto"
+            }
+          },
+          "infoGruppen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/InfoGruppeDto"
+            }
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "KontoBasicDto" : {
+        "type" : "object",
+        "properties" : {
+          "sachgruppe" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "hinweis" : {
+            "type" : "string"
+          },
+          "sortierung" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "ebene" : {
+            "type" : "integer"
+          },
+          "teilJr" : {
+            "type" : "string",
+            "enum" : [ "Bilanz (BI)", "Erfolgsrechnung (ER)", "Investitionsrechnung (Finanzvermögen) (IRFV)", "Investitionsrechnung (Verwaltungsvermögen (IRVV)" ]
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "ApplikationPostDto" : {
+        "type" : "object",
+        "properties" : {
+          "einheitBezeichnung" : {
+            "type" : "string"
+          },
+          "departementKurzBezeichung" : {
+            "type" : "string"
+          },
+          "einheitKurzBezeichnung" : {
+            "type" : "string"
+          },
+          "buchungskreis" : {
+            "type" : "integer"
+          },
+          "betrieb" : {
+            "type" : "string"
+          },
+          "umgebung" : {
+            "type" : "string",
+            "enum" : [ "Produktion (PRD)", "Integration (INT)", "Development (DEV)", "Test (TST)", "unbekannt (NAN)" ]
+          },
+          "betriebsart" : {
+            "type" : "string",
+            "enum" : [ "Infrastrukturbetrieb (I-DL)", "keine Angaben (N/A)", "keine Angaben (NULL)", "technischer Applikationsbetrieb (tAB)" ]
+          },
+          "assetStatus" : {
+            "type" : "string",
+            "enum" : [ "bereitgestellt (BT)", "bestellt (BE)", "Nutzungsdauer abgelaufen (AB)", "transferiert (TF)", "unbekannt (NAN)" ]
+          },
+          "anzahlBenutzer" : {
+            "type" : "integer"
+          },
+          "ebeneOne" : {
+            "type" : "string"
+          },
+          "ebeneTwo" : {
+            "type" : "string"
+          },
+          "ebeneThree" : {
+            "type" : "string"
+          },
+          "lieferantenName" : {
+            "type" : "string"
+          },
+          "technVerantwortungTLV1" : {
+            "type" : "string"
+          },
+          "technVerantwortungTLV2" : {
+            "type" : "string"
+          },
+          "technVerantwortungOrg" : {
+            "type" : "string"
+          },
+          "fachVerantwortungFLV1" : {
+            "type" : "string"
+          },
+          "fachVerantwortungFLV2" : {
+            "type" : "string"
+          },
+          "integritaet" : {
+            "type" : "string",
+            "enum" : [ "unbekannt (0)", "normaler Schutzbedarf 1 (1)", "normaler Schutzbedarf 2 (2)", "erhöhter Schutzbedarf (3)" ]
+          },
+          "verfuegbarkeit" : {
+            "type" : "string",
+            "enum" : [ "NSB0 (AD 48/MTTR 4) (0)", "ESB1 (AD 8/MTTR 4) (1)", "ESB2 (AD 2/MTTR 2) (2)", "ESB3 (AD 1/MTTR 1 (3)" ]
+          },
+          "verbindlichkeit" : {
+            "type" : "string",
+            "enum" : [ "unbekannt (0)", "NSB1 (Trx im Rahmen der Aufgabenerfüllung verbindlich) (1)", "ESB2 (Trx mit rechtlich verbindlichem Charakter) (2)", "ESB3 (Trx rechtlich verbindlich vor Gericht) (3)" ]
+          },
+          "risiko" : {
+            "type" : "string",
+            "enum" : [ "Stufe 0/6 (0)", "Stufe 1/6 (1)", "Stufe 2/6 (2)", "Stufe 3/6 (3)", "Stufe 4/6 (4)", "Stufe 5/6 (5)", "Stufe 6/6 (6)" ]
+          },
+          "appName" : {
+            "type" : "string"
+          },
+          "vertraulichkeit" : {
+            "type" : "string",
+            "enum" : [ "öffentlich (0)", "intern (Grundwert) (1)", "vertraulich (2)", "streng vertraulich (3)" ]
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "EigenAppDetailDto" : {
+        "type" : "object",
+        "properties" : {
+          "appName" : {
+            "type" : "string"
+          },
+          "idNummer" : {
+            "type" : "string"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "betrieb" : {
+            "type" : "string"
+          },
+          "umgebung" : {
+            "type" : "string",
+            "enum" : [ "Produktion (PRD)", "Integration (INT)", "Development (DEV)", "Test (TST)", "unbekannt (NAN)" ]
+          },
+          "assetStatus" : {
+            "type" : "string",
+            "enum" : [ "bereitgestellt (BT)", "bestellt (BE)", "Nutzungsdauer abgelaufen (AB)", "transferiert (TF)", "unbekannt (NAN)" ]
+          },
+          "anzahlBenutzer" : {
+            "type" : "integer"
+          },
+          "lieferantenName" : {
+            "type" : "string"
+          },
+          "technVerantwortungTLV1" : {
+            "type" : "string"
+          },
+          "fachVerantwortungFLV1" : {
+            "type" : "string"
+          },
+          "vertraulichkeit" : {
+            "type" : "string",
+            "enum" : [ "öffentlich (0)", "intern (Grundwert) (1)", "vertraulich (2)", "streng vertraulich (3)" ]
+          },
+          "integritaet" : {
+            "type" : "string",
+            "enum" : [ "unbekannt (0)", "normaler Schutzbedarf 1 (1)", "normaler Schutzbedarf 2 (2)", "erhöhter Schutzbedarf (3)" ]
+          },
+          "verbindlichkeit" : {
+            "type" : "string",
+            "enum" : [ "unbekannt (0)", "NSB1 (Trx im Rahmen der Aufgabenerfüllung verbindlich) (1)", "ESB2 (Trx mit rechtlich verbindlichem Charakter) (2)", "ESB3 (Trx rechtlich verbindlich vor Gericht) (3)" ]
+          },
+          "risiko" : {
+            "type" : "string",
+            "enum" : [ "Stufe 0/6 (0)", "Stufe 1/6 (1)", "Stufe 2/6 (2)", "Stufe 3/6 (3)", "Stufe 4/6 (4)", "Stufe 5/6 (5)", "Stufe 6/6 (6)" ]
+          },
+          "finanzRelevanz" : {
+            "type" : "string",
+            "enum" : [ "nicht relevant (0)", "relevant (1)", "sehr relevant (2)" ]
+          },
+          "finanzRelevanzTxt" : {
+            "type" : "string"
+          },
+          "itRelevanz" : {
+            "type" : "string",
+            "enum" : [ "nicht relevant (0)", "relevant (1)", "sehr relevant (2)" ]
+          },
+          "itRelevanzTxt" : {
+            "type" : "string"
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "einheit" : {
+            "$ref" : "#/components/schemas/EinheitDto"
+          },
+          "hinweise" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/HinweisDto"
+            }
+          },
+          "prozesse" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ProzessDto"
+            }
+          }
+        }
+      },
+      "InfoGruppePostDto" : {
+        "type" : "object",
+        "properties" : {
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "hinweis" : {
+            "type" : "string"
+          },
+          "sortierung" : {
+            "type" : "integer"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "referenzen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ReferenzDto"
+            }
+          },
+          "infoFelder" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/InfoFeldDto"
+            }
+          }
+        }
+      },
+      "ReferenzPostDto" : {
+        "type" : "object",
+        "properties" : {
+          "typ" : {
+            "type" : "string",
+            "enum" : [ "Prüfungsstandards (EXPERTsuisse) (PS)", "Handbuch über den Finanzhaushalt der Stadt Zürich (HB)", "Prüfgebiet (PG)", "Stadtratsbeschluss (STRB)", "Weblink (WEB)", "Diverses (DIV)" ]
+          },
+          "kurzBezeichnung" : {
+            "type" : "string"
+          },
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "kapitel" : {
+            "type" : "string"
+          },
+          "kommentar" : {
+            "type" : "string"
+          },
+          "webLink" : {
+            "type" : "string"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "ProzessDto" : {
+        "type" : "object",
+        "properties" : {
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "prozessEbene" : {
+            "type" : "string",
+            "enum" : [ "Hauptprozess (HP)", "Teilprozess (TP)", "keine Angaben (NA)" ]
+          },
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "scotReferenz" : {
+            "type" : "string"
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "EinheitDto" : {
+        "type" : "object",
+        "properties" : {
+          "applikationen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ApplikationInEinheitDto"
+            }
+          },
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "buchungskreis" : {
+            "type" : "integer"
+          },
+          "kurzBezeichnung" : {
+            "type" : "string"
+          },
+          "typ" : {
+            "type" : "string",
+            "enum" : [ "Departement (DP)", "Dienstabteilung (DA)", "Kontrollstellenmandat (MAN)", "Amt/Behörde der Stadt Zürich (AMT)", "Stadt Zürich (Konzern) (ZH)" ]
+          },
+          "rechtsform" : {
+            "type" : "string",
+            "enum" : [ "Aktiengesellschaft (AG)", "Einfache Gesellschaft (EING)", "Genossenschaft (GEN)", "öffentlich-rechtliche Anstalt (OERA)", "Stiftung (STI)", "Verein (VER)", "Einheit der Stadt Zürich (VEZH)" ]
+          },
+          "orgId" : {
+            "type" : "string"
+          },
+          "eloRef" : {
+            "type" : "string"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "gueltigAb" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "EinheitPostDto" : {
+        "type" : "object",
+        "properties" : {
+          "applikationen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ApplikationInEinheitDto"
+            }
+          },
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "buchungskreis" : {
+            "type" : "integer"
+          },
+          "kurzBezeichnung" : {
+            "type" : "string"
+          },
+          "typ" : {
+            "type" : "string",
+            "enum" : [ "Departement (DP)", "Dienstabteilung (DA)", "Kontrollstellenmandat (MAN)", "Amt/Behörde der Stadt Zürich (AMT)", "Stadt Zürich (Konzern) (ZH)" ]
+          },
+          "rechtsform" : {
+            "type" : "string",
+            "enum" : [ "Aktiengesellschaft (AG)", "Einfache Gesellschaft (EING)", "Genossenschaft (GEN)", "öffentlich-rechtliche Anstalt (OERA)", "Stiftung (STI)", "Verein (VER)", "Einheit der Stadt Zürich (VEZH)" ]
+          },
+          "orgId" : {
+            "type" : "string"
+          },
+          "eloRef" : {
+            "type" : "string"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "gueltigAb" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "ErfolgsRePositionPostDto" : {
+        "type" : "object",
+        "properties" : {
+          "jahr" : {
+            "type" : "integer"
+          },
+          "sachkonto" : {
+            "type" : "string"
+          },
+          "sachkontoTxt" : {
+            "type" : "string"
+          },
+          "betrag" : {
+            "type" : "number"
+          },
+          "buchungskreis" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "HinweisDetailDto" : {
+        "type" : "object",
+        "properties" : {
+          "titel" : {
+            "type" : "string"
+          },
+          "quelle" : {
+            "type" : "string"
+          },
+          "hinweis" : {
+            "type" : "string"
+          },
+          "standText" : {
+            "type" : "string"
+          },
+          "terminDatum" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "prioritaet" : {
+            "type" : "string",
+            "enum" : [ "tief (0)", "normal (1)", "hoch (2)" ]
+          },
+          "status" : {
+            "type" : "string",
+            "enum" : [ "pendent (P)", "erledigt (OK)", "gelöscht (99)" ]
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "einheit" : {
+            "$ref" : "#/components/schemas/EinheitDto"
+          },
+          "konto" : {
+            "$ref" : "#/components/schemas/KontoDto"
+          },
+          "prozess" : {
+            "$ref" : "#/components/schemas/ProzessDto"
+          },
+          "eigenApp" : {
+            "$ref" : "#/components/schemas/EigenAppDto"
+          }
+        }
+      },
+      "ProzessDetailDto" : {
+        "type" : "object",
+        "properties" : {
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "prozessEbene" : {
+            "type" : "string",
+            "enum" : [ "Hauptprozess (HP)", "Teilprozess (TP)", "keine Angaben (NA)" ]
+          },
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "scotReferenz" : {
+            "type" : "string"
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "einheit" : {
+            "$ref" : "#/components/schemas/EinheitDto"
+          },
+          "hinweise" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/HinweisDto"
+            }
+          },
+          "konten" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/KontoDto"
+            }
+          },
+          "eigenApps" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/EigenAppDto"
+            }
+          },
+          "applikationenInEinheit" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ApplikationInEinheitDto"
+            }
+          }
+        }
+      },
+      "InfoThemaPostDto" : {
+        "type" : "object",
+        "properties" : {
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "hinweis" : {
+            "type" : "string"
+          },
+          "sortierung" : {
+            "type" : "integer"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "referenzen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ReferenzDto"
+            }
+          },
+          "infoGruppen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/InfoGruppeDto"
+            }
+          }
+        }
+      },
+      "PersonDetailDto" : {
+        "type" : "object",
+        "properties" : {
+          "nachname" : {
+            "type" : "string"
+          },
+          "vorname" : {
+            "type" : "string"
+          },
+          "kurzzeichen" : {
+            "type" : "string"
+          },
+          "intern" : {
+            "type" : "boolean"
+          },
+          "bemerkungen" : {
+            "type" : "string"
+          },
+          "rolle" : {
+            "type" : "string",
+            "enum" : [ "Dienstchefin/Dienstchef (DC)", "Departementale Kontaktperson (DKP)", "Finanzverantwortliche (FV)", "Departementsvorstehende (DV)", "nicht relevant (NA)", "siehe Bemerkungen (BE)" ]
+          },
+          "funktion" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : "string"
+          },
+          "mobile" : {
+            "type" : "string"
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "einheit" : {
+            "$ref" : "#/components/schemas/EinheitDto"
+          },
+          "keyPersonInEinheiten" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/EinheitDto"
+            }
+          }
+        }
+      },
+      "InfoFeldDto" : {
+        "type" : "object",
+        "properties" : {
+          "label" : {
+            "type" : "string"
+          },
+          "tooltipText" : {
+            "type" : "string"
+          },
+          "frageText" : {
+            "type" : "string"
+          },
+          "sortierung" : {
+            "type" : "integer"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "inputType" : {
+            "type" : "string",
+            "enum" : [ "TextArea (TXA)", "TextField (TXF)", "Toggle (TOG)", "Selection (SEL)", "Date (DAT)", "Table (TBL)", "File (FIL)", "Range (RGE)" ]
+          },
+          "entityClass" : {
+            "type" : "string"
+          },
+          "optionen" : {
+            "type" : "string"
+          },
+          "readOnly" : {
+            "type" : "boolean"
+          },
+          "zaehlwert" : {
+            "type" : "integer"
+          },
+          "referenzen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ReferenzDto"
+            }
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "ApplikationInEinheitPostDto" : {
+        "type" : "object",
+        "properties" : {
+          "applikation" : {
+            "$ref" : "#/components/schemas/ApplikationDto"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "relevanz" : {
+            "type" : "string",
+            "enum" : [ "nicht relevant (0)", "relevant (1)", "sehr relevant (2)" ]
+          }
+        }
+      },
+      "ApplikationDto" : {
+        "type" : "object",
+        "properties" : {
+          "einheitBezeichnung" : {
+            "type" : "string"
+          },
+          "departementKurzBezeichung" : {
+            "type" : "string"
+          },
+          "einheitKurzBezeichnung" : {
+            "type" : "string"
+          },
+          "buchungskreis" : {
+            "type" : "integer"
+          },
+          "betrieb" : {
+            "type" : "string"
+          },
+          "umgebung" : {
+            "type" : "string",
+            "enum" : [ "Produktion (PRD)", "Integration (INT)", "Development (DEV)", "Test (TST)", "unbekannt (NAN)" ]
+          },
+          "betriebsart" : {
+            "type" : "string",
+            "enum" : [ "Infrastrukturbetrieb (I-DL)", "keine Angaben (N/A)", "keine Angaben (NULL)", "technischer Applikationsbetrieb (tAB)" ]
+          },
+          "assetStatus" : {
+            "type" : "string",
+            "enum" : [ "bereitgestellt (BT)", "bestellt (BE)", "Nutzungsdauer abgelaufen (AB)", "transferiert (TF)", "unbekannt (NAN)" ]
+          },
+          "anzahlBenutzer" : {
+            "type" : "integer"
+          },
+          "ebeneOne" : {
+            "type" : "string"
+          },
+          "ebeneTwo" : {
+            "type" : "string"
+          },
+          "ebeneThree" : {
+            "type" : "string"
+          },
+          "lieferantenName" : {
+            "type" : "string"
+          },
+          "technVerantwortungTLV1" : {
+            "type" : "string"
+          },
+          "technVerantwortungTLV2" : {
+            "type" : "string"
+          },
+          "technVerantwortungOrg" : {
+            "type" : "string"
+          },
+          "fachVerantwortungFLV1" : {
+            "type" : "string"
+          },
+          "fachVerantwortungFLV2" : {
+            "type" : "string"
+          },
+          "integritaet" : {
+            "type" : "string",
+            "enum" : [ "unbekannt (0)", "normaler Schutzbedarf 1 (1)", "normaler Schutzbedarf 2 (2)", "erhöhter Schutzbedarf (3)" ]
+          },
+          "verfuegbarkeit" : {
+            "type" : "string",
+            "enum" : [ "NSB0 (AD 48/MTTR 4) (0)", "ESB1 (AD 8/MTTR 4) (1)", "ESB2 (AD 2/MTTR 2) (2)", "ESB3 (AD 1/MTTR 1 (3)" ]
+          },
+          "verbindlichkeit" : {
+            "type" : "string",
+            "enum" : [ "unbekannt (0)", "NSB1 (Trx im Rahmen der Aufgabenerfüllung verbindlich) (1)", "ESB2 (Trx mit rechtlich verbindlichem Charakter) (2)", "ESB3 (Trx rechtlich verbindlich vor Gericht) (3)" ]
+          },
+          "risiko" : {
+            "type" : "string",
+            "enum" : [ "Stufe 0/6 (0)", "Stufe 1/6 (1)", "Stufe 2/6 (2)", "Stufe 3/6 (3)", "Stufe 4/6 (4)", "Stufe 5/6 (5)", "Stufe 6/6 (6)" ]
+          },
+          "appName" : {
+            "type" : "string"
+          },
+          "vertraulichkeit" : {
+            "type" : "string",
+            "enum" : [ "öffentlich (0)", "intern (Grundwert) (1)", "vertraulich (2)", "streng vertraulich (3)" ]
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "ApplikationInEinheitDto" : {
+        "type" : "object",
+        "properties" : {
+          "applikation" : {
+            "$ref" : "#/components/schemas/ApplikationDto"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "relevanz" : {
+            "type" : "string",
+            "enum" : [ "nicht relevant (0)", "relevant (1)", "sehr relevant (2)" ]
+          },
+          "id" : {
+            "$ref" : "#/components/schemas/ApplikationInEinheitKey"
+          }
+        }
+      },
+      "ApplikationInEinheitKey" : {
+        "type" : "object",
+        "properties" : {
+          "applikationId" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "einheitId" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "BilanzPositionPostDto" : {
+        "type" : "object",
+        "properties" : {
+          "jahr" : {
+            "type" : "integer"
+          },
+          "sachkonto" : {
+            "type" : "string"
+          },
+          "sachkontoTxt" : {
+            "type" : "string"
+          },
+          "betrag" : {
+            "type" : "number"
+          },
+          "buchungskreis" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "HinweisDto" : {
+        "type" : "object",
+        "properties" : {
+          "titel" : {
+            "type" : "string"
+          },
+          "quelle" : {
+            "type" : "string"
+          },
+          "hinweis" : {
+            "type" : "string"
+          },
+          "standText" : {
+            "type" : "string"
+          },
+          "terminDatum" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "prioritaet" : {
+            "type" : "string",
+            "enum" : [ "tief (0)", "normal (1)", "hoch (2)" ]
+          },
+          "status" : {
+            "type" : "string",
+            "enum" : [ "pendent (P)", "erledigt (OK)", "gelöscht (99)" ]
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "InfoFeldPostDto" : {
+        "type" : "object",
+        "properties" : {
+          "label" : {
+            "type" : "string"
+          },
+          "tooltipText" : {
+            "type" : "string"
+          },
+          "frageText" : {
+            "type" : "string"
+          },
+          "sortierung" : {
+            "type" : "integer"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "inputType" : {
+            "type" : "string",
+            "enum" : [ "TextArea (TXA)", "TextField (TXF)", "Toggle (TOG)", "Selection (SEL)", "Date (DAT)", "Table (TBL)", "File (FIL)", "Range (RGE)" ]
+          },
+          "entityClass" : {
+            "type" : "string"
+          },
+          "optionen" : {
+            "type" : "string"
+          },
+          "readOnly" : {
+            "type" : "boolean"
+          },
+          "zaehlwert" : {
+            "type" : "integer"
+          },
+          "referenzen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ReferenzDto"
+            }
+          }
+        }
+      },
+      "KontoDto" : {
+        "type" : "object",
+        "properties" : {
+          "sachgruppe" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "hinweis" : {
+            "type" : "string"
+          },
+          "sortierung" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "ebene" : {
+            "type" : "integer"
+          },
+          "teilJr" : {
+            "type" : "string",
+            "enum" : [ "Bilanz (BI)", "Erfolgsrechnung (ER)", "Investitionsrechnung (Finanzvermögen) (IRFV)", "Investitionsrechnung (Verwaltungsvermögen (IRVV)" ]
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "InfoGruppeDto" : {
+        "type" : "object",
+        "properties" : {
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "hinweis" : {
+            "type" : "string"
+          },
+          "sortierung" : {
+            "type" : "integer"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "referenzen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ReferenzDto"
+            }
+          },
+          "infoFelder" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/InfoFeldDto"
+            }
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "ReferenzDto" : {
+        "type" : "object",
+        "properties" : {
+          "typ" : {
+            "type" : "string",
+            "enum" : [ "Prüfungsstandards (EXPERTsuisse) (PS)", "Handbuch über den Finanzhaushalt der Stadt Zürich (HB)", "Prüfgebiet (PG)", "Stadtratsbeschluss (STRB)", "Weblink (WEB)", "Diverses (DIV)" ]
+          },
+          "kurzBezeichnung" : {
+            "type" : "string"
+          },
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "kapitel" : {
+            "type" : "string"
+          },
+          "kommentar" : {
+            "type" : "string"
+          },
+          "webLink" : {
+            "type" : "string"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "EigenAppDto" : {
+        "type" : "object",
+        "properties" : {
+          "appName" : {
+            "type" : "string"
+          },
+          "idNummer" : {
+            "type" : "string"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "betrieb" : {
+            "type" : "string"
+          },
+          "umgebung" : {
+            "type" : "string",
+            "enum" : [ "Produktion (PRD)", "Integration (INT)", "Development (DEV)", "Test (TST)", "unbekannt (NAN)" ]
+          },
+          "assetStatus" : {
+            "type" : "string",
+            "enum" : [ "bereitgestellt (BT)", "bestellt (BE)", "Nutzungsdauer abgelaufen (AB)", "transferiert (TF)", "unbekannt (NAN)" ]
+          },
+          "anzahlBenutzer" : {
+            "type" : "integer"
+          },
+          "lieferantenName" : {
+            "type" : "string"
+          },
+          "technVerantwortungTLV1" : {
+            "type" : "string"
+          },
+          "fachVerantwortungFLV1" : {
+            "type" : "string"
+          },
+          "vertraulichkeit" : {
+            "type" : "string",
+            "enum" : [ "öffentlich (0)", "intern (Grundwert) (1)", "vertraulich (2)", "streng vertraulich (3)" ]
+          },
+          "integritaet" : {
+            "type" : "string",
+            "enum" : [ "unbekannt (0)", "normaler Schutzbedarf 1 (1)", "normaler Schutzbedarf 2 (2)", "erhöhter Schutzbedarf (3)" ]
+          },
+          "verbindlichkeit" : {
+            "type" : "string",
+            "enum" : [ "unbekannt (0)", "NSB1 (Trx im Rahmen der Aufgabenerfüllung verbindlich) (1)", "ESB2 (Trx mit rechtlich verbindlichem Charakter) (2)", "ESB3 (Trx rechtlich verbindlich vor Gericht) (3)" ]
+          },
+          "risiko" : {
+            "type" : "string",
+            "enum" : [ "Stufe 0/6 (0)", "Stufe 1/6 (1)", "Stufe 2/6 (2)", "Stufe 3/6 (3)", "Stufe 4/6 (4)", "Stufe 5/6 (5)", "Stufe 6/6 (6)" ]
+          },
+          "finanzRelevanz" : {
+            "type" : "string",
+            "enum" : [ "nicht relevant (0)", "relevant (1)", "sehr relevant (2)" ]
+          },
+          "finanzRelevanzTxt" : {
+            "type" : "string"
+          },
+          "itRelevanz" : {
+            "type" : "string",
+            "enum" : [ "nicht relevant (0)", "relevant (1)", "sehr relevant (2)" ]
+          },
+          "itRelevanzTxt" : {
+            "type" : "string"
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
+      },
+      "KatalogPostDto" : {
+        "type" : "object",
+        "properties" : {
+          "bezeichnung" : {
+            "type" : "string"
+          },
+          "beschreibung" : {
+            "type" : "string"
+          },
+          "infoThemen" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/InfoThemaDto"
+            }
+          },
+          "gueltigAb" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "istAktiv" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "InfoWertDetailDto" : {
+        "type" : "object",
+        "properties" : {
+          "stringWert" : {
+            "type" : "string"
+          },
+          "textWert" : {
+            "type" : "string"
+          },
+          "betragWert" : {
+            "type" : "number"
+          },
+          "integerWert" : {
+            "type" : "integer"
+          },
+          "booleanWert" : {
+            "type" : "boolean"
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          },
+          "modifiedAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tecVersion" : {
+            "type" : "integer"
+          },
+          "alterInTagen" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "infoFeld" : {
+            "$ref" : "#/components/schemas/InfoFeldDto"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "einheit" : {
+            "$ref" : "#/components/schemas/EinheitDto"
+          }
+        }
+      }
+    }
+  }
+}
